@@ -1,0 +1,41 @@
+Tools for looking at cytometry data.
+
+This directory contains the source code for a number of tools for
+analysing cytometry data using R.
+
+I created these, primarily because I found the standard GUI driven tools
+to be difficult to use. These tools are quite rudimentary, but since they
+allow the analysis of the data within the R environment it is very easy to
+extend the types of analyses and visualisations that are possible.
+
+There are four directories:
+
+1. fcs3_reader. This contains the source code for a small C++ program that reads
+   files in the fcs3 format. I don't know if it can read all types of .fcs files,
+   as I designed it by reverse-engineering files from FACS-Aria (Beckton
+   Dickinson) machines in our lab. That was many years ago (~2004 or so), and I have
+   yet to have any trouble with it.
+   The executable reads in the binary format file and outputs a text representation
+   that can easily be used in R or other scripting environments.
+
+2. scripts. This contains a single perl script (fcs2text.pl) that reads the typical xml 
+   file describing an experiment (series of analyses) performed on a FACS aria machine. 
+   It then calls the read_fcs program (see above) and spits out appropriately named text files.
+
+3. R. This contains a file of R functions (functions.R). These provide various ways of
+   specifying gates and visualising data. These functions are all fairly simple, with the
+   exception of a function that allows the user to specify arbitrarily shaped gates (well,
+   almost arbitrary; the gates must be convex, though several convex gates can be used to
+   create concavities).
+
+4. example_date. This contains a directory of data, including the .fcs and the .xml files as
+   well as the text representations derived from these. There is also an .R file containing
+   hopefully working code demonstrating the use of the R functions.
+
+Don't hesitate to contact me if you're interested in any of the above. I suspect that the components
+may require a little playing around with to get working on an arbitrary system. (At least making
+some changes to the PATH or moving binaries around).
+
+Martin Jakt
+lmjakt@gmail.com
+

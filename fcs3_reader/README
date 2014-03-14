@@ -1,0 +1,21 @@
+To compile & install.
+
+1. Make a suitable Makefile, to include the headers and sources described in the .pro
+   file. I tend to use qmake for this, but something like tmake might also work. If you
+   know what you're doing, write it yourself. (I don't, hence the use of qmake).
+
+2. make
+
+3. Move the resulting binary file (read_fcs) to somewhere in the path (eg. ~/bin) or change
+   your PATH, or set up some links to achieve the same.
+
+That's it.
+
+Alternatively, since there are only two source files, you can compile by:
+
+g++ -o read_fcs fcs3.cpp main.cpp
+
+Which is probably simpler. (The Makefile is good to have if you want to make changes
+to the source code, in which case you probably know what you're doing).
+
+

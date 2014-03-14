@@ -1,0 +1,21 @@
+The text files in this directory:
+
+549_1_d, 734_1, 763_2_d, APC, PE, etc. were extracted from the .fcs files by
+running the fcs2text.pl script on the .xml file that describes the samples.
+
+This requires that the 'read_fcs' binary has been compiled from the sources in
+the fcs3_reader/ directory, and that this binary lies in the path.
+
+Each text file represents the analysis of a single data set.
+
+The .R file contains a set of commands that can be used to look at the data in
+various ways.
+
+There may be bugs in the R code, and others may require modification on other systems.
+
+If you should come across such problems or have other trouble, then don't hesitate to
+contact me.
+
+Martin Jakt
+
+lmjakt@gmail.com
